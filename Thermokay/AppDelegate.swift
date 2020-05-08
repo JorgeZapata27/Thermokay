@@ -20,14 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         registerForRemoteNotification()
         
-        Auth.auth().signIn(withEmail: "peterzucker123@gmail.com", password: "lemon123") { (result, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            print(result!)
-            return
-        }
+        // Testing Only
+        
+//         Auth.auth().signIn(withEmail: "peterzucker123@gmail.com", password: "lemon123") { (result, error) in
+//             if error != nil {
+//                 print(error!.localizedDescription)
+//                 return
+//             }
+//             print(result!)
+//             return
+//         }
         
         return true
     }
