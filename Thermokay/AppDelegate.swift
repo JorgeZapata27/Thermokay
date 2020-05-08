@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        registerForRemoteNotification()
+        
+        Auth.auth().signIn(withEmail: "peterzucker123@gmail.com", password: "lemon123") { (result, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            print(result!)
+            return
+        }
+        
         return true
+    }
+
+    func registerForRemoteNotification() {
+        if #available(iOS 10.0, *) {
+            let center  = UNUserNotificationCenter.current()
+            center.delegate = self as? UNUserNotificationCenterDelegate
+            center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
+                if error == nil{
+                    DispatchQueue.main.async {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                }
+            }
+        }
+        else {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
+            UIApplication.shared.registerForRemoteNotifications()
+        }
     }
 
     // MARK: UISceneSession Lifecycle
@@ -32,6 +64,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
-

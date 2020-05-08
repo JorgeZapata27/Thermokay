@@ -3,27 +3,120 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780F392A2448E086006979F3 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F39292448E086006979F3 /* PrivacyPolicy.swift */; };
+		780F392C2448EFE9006979F3 /* TermsConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F392B2448EFE9006979F3 /* TermsConditions.swift */; };
+		780F392E24499AB5006979F3 /* ThisGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F392D24499AB5006979F3 /* ThisGroup.swift */; };
+		780F39302449A294006979F3 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F392F2449A294006979F3 /* Account.swift */; };
+		780F39322449F0F1006979F3 /* AddGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F39312449F0F1006979F3 /* AddGroup.swift */; };
+		780F3934244A2B07006979F3 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F3933244A2B07006979F3 /* Inbox.swift */; };
+		780F3936244B0081006979F3 /* InboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F3935244B0081006979F3 /* InboxCell.swift */; };
+		7826DF96245BFC9C00C67F79 /* ScaledElementProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7826DF95245BFC9C00C67F79 /* ScaledElementProcessor.swift */; };
+		784B806024631264000A4697 /* TemperatureStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B805F24631264000A4697 /* TemperatureStructure.swift */; };
+		784B8062246325EF000A4697 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B8061246325EF000A4697 /* CalendarCell.swift */; };
+		784D0212244C4BFB00843160 /* EditScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D0211244C4BFB00843160 /* EditScan.swift */; };
+		784D0214244C53D300843160 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D0213244C53D300843160 /* Location.swift */; };
+		784D0216244C9B7000843160 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D0215244C9B7000843160 /* GlobalVariables.swift */; };
+		784D0218244DAEEF00843160 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784D0217244DAEEF00843160 /* GoogleService-Info.plist */; };
+		784D021A244DBAB600843160 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D0219244DBAB600843160 /* Extensions.swift */; };
+		784D021C244F070F00843160 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D021B244F070F00843160 /* UserObject.swift */; };
+		784D021E244F074800843160 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D021D244F074800843160 /* Users.swift */; };
+		784D0220244F3B3300843160 /* InboxObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D021F244F3B3300843160 /* InboxObject.swift */; };
+		784E724B24489E0F008932AE /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E724A24489E0F008932AE /* SettingsCell.swift */; };
+		784E724D2448A662008932AE /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E724C2448A662008932AE /* ChangePassword.swift */; };
+		784E724F2448A9BF008932AE /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E724E2448A9BF008932AE /* NotificationSettings.swift */; };
 		7863729A2447110E0080BD50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372992447110E0080BD50 /* AppDelegate.swift */; };
 		7863729C2447110E0080BD50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863729B2447110E0080BD50 /* SceneDelegate.swift */; };
-		7863729E2447110E0080BD50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863729D2447110E0080BD50 /* ViewController.swift */; };
+		7863729E2447110E0080BD50 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863729D2447110E0080BD50 /* SignIn.swift */; };
 		786372A12447110E0080BD50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7863729F2447110E0080BD50 /* Main.storyboard */; };
 		786372A3244711110080BD50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786372A2244711110080BD50 /* Assets.xcassets */; };
 		786372A6244711110080BD50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786372A4244711110080BD50 /* LaunchScreen.storyboard */; };
+		786372B0244721510080BD50 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372AF244721510080BD50 /* SignUp.swift */; };
+		786372B22447534A0080BD50 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372B12447534A0080BD50 /* ForgotPassword.swift */; };
+		786372B424476A930080BD50 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372B324476A930080BD50 /* Settings.swift */; };
+		786372B624476D590080BD50 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372B524476D590080BD50 /* Calendar.swift */; };
+		786372B8244778870080BD50 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372B7244778860080BD50 /* Home.swift */; };
+		786372BA2447788F0080BD50 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372B92447788F0080BD50 /* Group.swift */; };
+		786372BC244778E40080BD50 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372BB244778E40080BD50 /* Profile.swift */; };
+		786372BE24484A820080BD50 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372BD24484A820080BD50 /* Scan.swift */; };
+		786372C02448660E0080BD50 /* MyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786372BF2448660E0080BD50 /* MyGroupCell.swift */; };
+		788901E5245EA04600F6C250 /* rotate.gif in Resources */ = {isa = PBXBuildFile; fileRef = 788901E4245EA04500F6C250 /* rotate.gif */; };
+		78A9D857245C85B4000F7D70 /* BarCodeDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A9D856245C85B4000F7D70 /* BarCodeDetectorViewController.swift */; };
+		78AD23F324507DC60035D52B /* ObjectHere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AD23F224507DC60035D52B /* ObjectHere.swift */; };
+		78CF22D4246478350056333B /* FriendObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF22D3246478350056333B /* FriendObject.swift */; };
+		78D16C642455CE810039C1BD /* FindFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D16C632455CE810039C1BD /* FindFriend.swift */; };
+		78D16C662455D33E0039C1BD /* WorkAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D16C652455D33E0039C1BD /* WorkAround.swift */; };
+		78D16C9C2459FA3C0039C1BD /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 78D16C9B2459FA3C0039C1BD /* tessdata */; };
+		78DE47E52453329C002412FF /* GroupObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE47E42453329C002412FF /* GroupObject.swift */; };
+		9362E4F920EDFB0FE93256A8 /* Pods_Thermokay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729955B1A5A5BF8786AA542 /* Pods_Thermokay.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		78D16C982456E7630039C1BD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		51715F476A69B388D78039B8 /* Pods-Thermokay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thermokay.debug.xcconfig"; path = "Target Support Files/Pods-Thermokay/Pods-Thermokay.debug.xcconfig"; sourceTree = "<group>"; };
+		673A058B5A6F968CCA4F4E9E /* Pods-Thermokay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thermokay.release.xcconfig"; path = "Target Support Files/Pods-Thermokay/Pods-Thermokay.release.xcconfig"; sourceTree = "<group>"; };
+		780F39292448E086006979F3 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		780F392B2448EFE9006979F3 /* TermsConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditions.swift; sourceTree = "<group>"; };
+		780F392D24499AB5006979F3 /* ThisGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisGroup.swift; sourceTree = "<group>"; };
+		780F392F2449A294006979F3 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		780F39312449F0F1006979F3 /* AddGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroup.swift; sourceTree = "<group>"; };
+		780F3933244A2B07006979F3 /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
+		780F3935244B0081006979F3 /* InboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxCell.swift; sourceTree = "<group>"; };
+		7826DF95245BFC9C00C67F79 /* ScaledElementProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledElementProcessor.swift; sourceTree = "<group>"; };
+		784B805F24631264000A4697 /* TemperatureStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureStructure.swift; sourceTree = "<group>"; };
+		784B8061246325EF000A4697 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		784D0211244C4BFB00843160 /* EditScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScan.swift; sourceTree = "<group>"; };
+		784D0213244C53D300843160 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		784D0215244C9B7000843160 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		784D0217244DAEEF00843160 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		784D0219244DBAB600843160 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		784D021B244F070F00843160 /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		784D021D244F074800843160 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		784D021F244F3B3300843160 /* InboxObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxObject.swift; sourceTree = "<group>"; };
+		784E724A24489E0F008932AE /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		784E724C2448A662008932AE /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		784E724E2448A9BF008932AE /* NotificationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettings.swift; sourceTree = "<group>"; };
 		786372962447110E0080BD50 /* Thermokay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thermokay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786372992447110E0080BD50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7863729B2447110E0080BD50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7863729D2447110E0080BD50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7863729D2447110E0080BD50 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		786372A02447110E0080BD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		786372A2244711110080BD50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		786372A5244711110080BD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		786372A7244711110080BD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		786372AF244721510080BD50 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		786372B12447534A0080BD50 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		786372B324476A930080BD50 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		786372B524476D590080BD50 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		786372B7244778860080BD50 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		786372B92447788F0080BD50 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		786372BB244778E40080BD50 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		786372BD24484A820080BD50 /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		786372BF2448660E0080BD50 /* MyGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupCell.swift; sourceTree = "<group>"; };
+		788901E4245EA04500F6C250 /* rotate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rotate.gif; sourceTree = "<group>"; };
+		78A9D856245C85B4000F7D70 /* BarCodeDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeDetectorViewController.swift; sourceTree = "<group>"; };
+		78AD23F224507DC60035D52B /* ObjectHere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHere.swift; sourceTree = "<group>"; };
+		78CF22D3246478350056333B /* FriendObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendObject.swift; sourceTree = "<group>"; };
+		78D16C632455CE810039C1BD /* FindFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriend.swift; sourceTree = "<group>"; };
+		78D16C652455D33E0039C1BD /* WorkAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkAround.swift; sourceTree = "<group>"; };
+		78D16C9B2459FA3C0039C1BD /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		78DE47E42453329C002412FF /* GroupObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupObject.swift; sourceTree = "<group>"; };
+		D729955B1A5A5BF8786AA542 /* Pods_Thermokay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thermokay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +124,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9362E4F920EDFB0FE93256A8 /* Pods_Thermokay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AF484E5DDAD5D2E9A793BD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D729955B1A5A5BF8786AA542 /* Pods_Thermokay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7863728D2447110E0080BD50 = {
 			isa = PBXGroup;
 			children = (
 				786372982447110E0080BD50 /* Thermokay */,
 				786372972447110E0080BD50 /* Products */,
+				C1598E759C034C0B5023FC5E /* Pods */,
+				5AF484E5DDAD5D2E9A793BD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +160,62 @@
 		786372982447110E0080BD50 /* Thermokay */ = {
 			isa = PBXGroup;
 			children = (
+				78D16C9B2459FA3C0039C1BD /* tessdata */,
 				786372992447110E0080BD50 /* AppDelegate.swift */,
 				7863729B2447110E0080BD50 /* SceneDelegate.swift */,
-				7863729D2447110E0080BD50 /* ViewController.swift */,
+				784D0219244DBAB600843160 /* Extensions.swift */,
+				7863729D2447110E0080BD50 /* SignIn.swift */,
+				786372AF244721510080BD50 /* SignUp.swift */,
+				786372B12447534A0080BD50 /* ForgotPassword.swift */,
+				786372B324476A930080BD50 /* Settings.swift */,
+				786372B524476D590080BD50 /* Calendar.swift */,
+				786372B7244778860080BD50 /* Home.swift */,
+				786372B92447788F0080BD50 /* Group.swift */,
+				786372BB244778E40080BD50 /* Profile.swift */,
+				786372BD24484A820080BD50 /* Scan.swift */,
+				7826DF95245BFC9C00C67F79 /* ScaledElementProcessor.swift */,
+				786372BF2448660E0080BD50 /* MyGroupCell.swift */,
+				784E724A24489E0F008932AE /* SettingsCell.swift */,
+				784E724C2448A662008932AE /* ChangePassword.swift */,
+				784E724E2448A9BF008932AE /* NotificationSettings.swift */,
+				780F39292448E086006979F3 /* PrivacyPolicy.swift */,
+				780F392D24499AB5006979F3 /* ThisGroup.swift */,
+				78D16C632455CE810039C1BD /* FindFriend.swift */,
+				78D16C652455D33E0039C1BD /* WorkAround.swift */,
+				780F392B2448EFE9006979F3 /* TermsConditions.swift */,
+				780F392F2449A294006979F3 /* Account.swift */,
+				780F39312449F0F1006979F3 /* AddGroup.swift */,
+				780F3933244A2B07006979F3 /* Inbox.swift */,
+				780F3935244B0081006979F3 /* InboxCell.swift */,
+				784D0211244C4BFB00843160 /* EditScan.swift */,
+				784D0213244C53D300843160 /* Location.swift */,
+				784D0215244C9B7000843160 /* GlobalVariables.swift */,
+				784D021B244F070F00843160 /* UserObject.swift */,
+				784D021D244F074800843160 /* Users.swift */,
+				784D021F244F3B3300843160 /* InboxObject.swift */,
+				78AD23F224507DC60035D52B /* ObjectHere.swift */,
+				78DE47E42453329C002412FF /* GroupObject.swift */,
+				78A9D856245C85B4000F7D70 /* BarCodeDetectorViewController.swift */,
+				784B805F24631264000A4697 /* TemperatureStructure.swift */,
+				784B8061246325EF000A4697 /* CalendarCell.swift */,
+				78CF22D3246478350056333B /* FriendObject.swift */,
 				7863729F2447110E0080BD50 /* Main.storyboard */,
 				786372A2244711110080BD50 /* Assets.xcassets */,
 				786372A4244711110080BD50 /* LaunchScreen.storyboard */,
 				786372A7244711110080BD50 /* Info.plist */,
+				784D0217244DAEEF00843160 /* GoogleService-Info.plist */,
+				788901E4245EA04500F6C250 /* rotate.gif */,
 			);
 			path = Thermokay;
+			sourceTree = "<group>";
+		};
+		C1598E759C034C0B5023FC5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51715F476A69B388D78039B8 /* Pods-Thermokay.debug.xcconfig */,
+				673A058B5A6F968CCA4F4E9E /* Pods-Thermokay.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +225,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 786372AA244711110080BD50 /* Build configuration list for PBXNativeTarget "Thermokay" */;
 			buildPhases = (
+				4905D91491292E337F82D0E3 /* [CP] Check Pods Manifest.lock */,
 				786372922447110E0080BD50 /* Sources */,
 				786372932447110E0080BD50 /* Frameworks */,
 				786372942447110E0080BD50 /* Resources */,
+				2BE755E12C9EE47E3F9D2A4D /* [CP] Embed Pods Frameworks */,
+				78D16C982456E7630039C1BD /* Embed Frameworks */,
+				6875731DBEDEA0B978C62D78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,7 +280,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784D0218244DAEEF00843160 /* GoogleService-Info.plist in Resources */,
+				788901E5245EA04600F6C250 /* rotate.gif in Resources */,
 				786372A6244711110080BD50 /* LaunchScreen.storyboard in Resources */,
+				78D16C9C2459FA3C0039C1BD /* tessdata in Resources */,
 				786372A3244711110080BD50 /* Assets.xcassets in Resources */,
 				786372A12447110E0080BD50 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +291,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2BE755E12C9EE47E3F9D2A4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Thermokay/Pods-Thermokay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Thermokay/Pods-Thermokay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Thermokay/Pods-Thermokay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4905D91491292E337F82D0E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Thermokay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6875731DBEDEA0B978C62D78 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Thermokay/Pods-Thermokay-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Thermokay/Pods-Thermokay-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Thermokay/Pods-Thermokay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		786372922447110E0080BD50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7863729E2447110E0080BD50 /* ViewController.swift in Sources */,
+				786372BA2447788F0080BD50 /* Group.swift in Sources */,
+				780F39322449F0F1006979F3 /* AddGroup.swift in Sources */,
+				786372BC244778E40080BD50 /* Profile.swift in Sources */,
+				780F3934244A2B07006979F3 /* Inbox.swift in Sources */,
+				78D16C662455D33E0039C1BD /* WorkAround.swift in Sources */,
+				78D16C642455CE810039C1BD /* FindFriend.swift in Sources */,
+				786372B424476A930080BD50 /* Settings.swift in Sources */,
+				784B8062246325EF000A4697 /* CalendarCell.swift in Sources */,
+				7826DF96245BFC9C00C67F79 /* ScaledElementProcessor.swift in Sources */,
+				784D0212244C4BFB00843160 /* EditScan.swift in Sources */,
+				78A9D857245C85B4000F7D70 /* BarCodeDetectorViewController.swift in Sources */,
+				786372C02448660E0080BD50 /* MyGroupCell.swift in Sources */,
+				784E724B24489E0F008932AE /* SettingsCell.swift in Sources */,
+				780F392C2448EFE9006979F3 /* TermsConditions.swift in Sources */,
+				7863729E2447110E0080BD50 /* SignIn.swift in Sources */,
+				784D0214244C53D300843160 /* Location.swift in Sources */,
+				784D021C244F070F00843160 /* UserObject.swift in Sources */,
+				784B806024631264000A4697 /* TemperatureStructure.swift in Sources */,
+				784E724D2448A662008932AE /* ChangePassword.swift in Sources */,
+				786372B0244721510080BD50 /* SignUp.swift in Sources */,
+				786372BE24484A820080BD50 /* Scan.swift in Sources */,
+				784D0216244C9B7000843160 /* GlobalVariables.swift in Sources */,
+				784D0220244F3B3300843160 /* InboxObject.swift in Sources */,
 				7863729A2447110E0080BD50 /* AppDelegate.swift in Sources */,
 				7863729C2447110E0080BD50 /* SceneDelegate.swift in Sources */,
+				786372B22447534A0080BD50 /* ForgotPassword.swift in Sources */,
+				780F392A2448E086006979F3 /* PrivacyPolicy.swift in Sources */,
+				78DE47E52453329C002412FF /* GroupObject.swift in Sources */,
+				784D021E244F074800843160 /* Users.swift in Sources */,
+				78AD23F324507DC60035D52B /* ObjectHere.swift in Sources */,
+				78CF22D4246478350056333B /* FriendObject.swift in Sources */,
+				786372B8244778870080BD50 /* Home.swift in Sources */,
+				784D021A244DBAB600843160 /* Extensions.swift in Sources */,
+				780F392E24499AB5006979F3 /* ThisGroup.swift in Sources */,
+				780F3936244B0081006979F3 /* InboxCell.swift in Sources */,
+				786372B624476D590080BD50 /* Calendar.swift in Sources */,
+				780F39302449A294006979F3 /* Account.swift in Sources */,
+				784E724F2448A9BF008932AE /* NotificationSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +452,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -260,6 +513,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -282,37 +536,47 @@
 		};
 		786372AB244711110080BD50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51715F476A69B388D78039B8 /* Pods-Thermokay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = ZH735L9VC9;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Thermokay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.Thermokay";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Thermokay;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		786372AC244711110080BD50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 673A058B5A6F968CCA4F4E9E /* Pods-Thermokay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = ZH735L9VC9;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Thermokay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jorge-Zapata.Thermokay";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Thermokay;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
