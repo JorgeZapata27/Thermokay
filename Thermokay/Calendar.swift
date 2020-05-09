@@ -184,6 +184,103 @@ class Calendar: UIViewController, UITableViewDelegate, UITableViewDataSource {
         default:
             print("Hello")
         }
+        
+        self.friendTemps.removeAll()
+        self.friends.removeAll()
+        
+        self.showIndicator(withTitle: "Loading", and: "")
+        Database.database().reference().child("Users").child("\(Auth.auth().currentUser!.uid)").child("takenTestFirst").observe(.value, with: { (data) in
+            let boolean : String = (data.value as? String)!
+            if boolean == "true" {
+                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+                    self.tableView.alpha = 1
+                }, completion: nil)
+                
+                self.temperatures.removeAll()
+                let uid = Auth.auth().currentUser?.uid
+                Database.database().reference().child("Users").child(uid!).child("My_Temperatures").observe(.childAdded) { (snapshot) in
+                    if let value = snapshot.value as? [String : Any] {
+                        let user = TemperatureStructure()
+                        user.temp = value["tempTaken"] as? String ?? "Not Found"
+                        user.locat = value["locationTaken"] as? String ?? "Not Found"
+                        user.dayy = value["dayTaken"] as? String ?? "Not Found"
+                        user.time = value["timeTaken"] as? String ?? "Not Found"
+                        user.postId = value["postID"] as? String ?? "Not Found"
+                        self.temperatures.append(user)
+                    }
+                    print("HI")
+                    print(self.temperatures)
+                    self.temperatures.reverse()
+                    print("HI")
+                }
+                
+                //Gets Friends
+                // Adds To Friends Array
+                
+                
+
+                Database.database().reference().child("Users").child(uid!).child("My_Friends").observe(.childAdded) { (snapshot) in
+                    if let value = snapshot.value as? [String : Any] {
+                        let user = FriendObject()
+                        user.uid = value["uid"] as? String ?? "Not Found"
+                        self.friends.append(user)
+                    }
+                    
+                    print(self.friends.count)
+
+                    
+
+                    for user in self.friends {
+                        Database.database().reference().child("Users").child("\(user.uid!)").child("takenTestFirst").observe(.value, with: { (data) in
+                            let boolean : String = (data.value as? String)!
+                            if boolean == "true" {
+                                print("Advance")
+                                // Get Temperature Model
+                                let tempModel = TemperatureStructure()
+                                Database.database().reference().child("Users").child(user.uid!).child("lastTemperature").child("dayTaken").observe(.value, with: { (dayTakenResult) in
+                                    let dayTaken : String = (dayTakenResult.value as? String)!
+                                    print(dayTaken)
+                                    Database.database().reference().child("Users").child(user.uid!).child("lastTemperature").child("locationTaken").observe(.value, with: { (locationTakenResult) in
+                                        let locationTaken : String = (locationTakenResult.value as? String)!
+                                        print(locationTaken)
+                                        Database.database().reference().child("Users").child(user.uid!).child("lastTemperature").child("tempTaken").observe(.value, with: { (tempTakenResult) in
+                                            let tempTaken : String = (tempTakenResult.value as? String)!
+                                            print(tempTaken)
+                                            Database.database().reference().child("Users").child(user.uid!).child("lastTemperature").child("timeTaken").observe(.value, with: { (timeTakenResult) in
+                                                let timeTaken : String = (timeTakenResult.value as? String)!
+                                                Database.database().reference().child("Users").child(user.uid!).child("name").observe(.value, with: { (userTakenResult) in
+                                                    let userTaken : String = (userTakenResult.value as? String)!
+                                                    print(userTaken)
+                                                    tempModel.dayy = dayTaken
+                                                    tempModel.locat = locationTaken
+                                                    tempModel.temp = tempTaken
+                                                    tempModel.time = timeTaken
+                                                    tempModel.user = userTaken
+                                                    self.friendTemps.append(tempModel)
+                                                })
+                                                self.tableView.reloadData()
+                                            })
+                                        })
+                                    })
+                                })
+                            } else {
+                                print("Null")
+                            }
+                        })
+
+                        print(user.uid!)
+
+                    }
+                }
+                
+            } else {
+                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+                    self.tableView.alpha = 0
+                }, completion: nil)
+            }
+        })
+        
+        self.hideIndicator()
 
         // Do any additional setup after loading the view.
     }
@@ -196,7 +293,7 @@ class Calendar: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if self.selection == "me" {
             return self.temperatures.count
         } else {
-            return self.friendTemps.count
+            return self.friends.count
         }
     }
     
@@ -214,6 +311,7 @@ class Calendar: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.time.text = temperatures[indexPath.row].time!
             cell.loca.text = temperatures[indexPath.row].locat!
             cell.temp.text = temperatures[indexPath.row].temp!
+            cell.name.text = "Me"
             
             return cell
         } else {
@@ -252,103 +350,6 @@ class Calendar: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.friendTemps.removeAll()
-        
-        self.showIndicator(withTitle: "Loading", and: "")
-        Database.database().reference().child("Users").child("\(Auth.auth().currentUser!.uid)").child("takenTestFirst").observe(.value, with: { (data) in
-            let boolean : String = (data.value as? String)!
-            if boolean == "true" {
-                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
-                    self.tableView.alpha = 1
-                }, completion: nil)
-                
-                self.temperatures.removeAll()
-                let uid = Auth.auth().currentUser?.uid
-                Database.database().reference().child("Users").child(uid!).child("My_Temperatures").observe(.childAdded) { (snapshot) in
-                    if let value = snapshot.value as? [String : Any] {
-                        let user = TemperatureStructure()
-                        user.temp = value["tempTaken"] as? String ?? "Not Found"
-                        user.locat = value["locationTaken"] as? String ?? "Not Found"
-                        user.dayy = value["dayTaken"] as? String ?? "Not Found"
-                        user.time = value["timeTaken"] as? String ?? "Not Found"
-                        user.postId = value["postID"] as? String ?? "Not Found"
-                        self.temperatures.append(user)
-                    }
-                    print("HI")
-                    print(self.temperatures)
-                    self.temperatures.reverse()
-                    self.tableView.reloadData()
-                    print("HI")
-                }
-                
-                //Gets Friends
-                // Adds To Friends Array
-                
-                
-
-                Database.database().reference().child("Users").child(uid!).child("My_Friends").observe(.childAdded) { (snapshot) in
-                    if let value = snapshot.value as? [String : Any] {
-                        let user = FriendObject()
-                        user.uid = value["uid"] as? String ?? "Not Found"
-                        self.friends.append(user)
-                    }
-                    self.friends.reverse()
-                    self.tableView.reloadData()
-
-                    
-
-                    for user in self.friends {
-                        Database.database().reference().child("Users").child("\(user.uid!)").child("takenTestFirst").observe(.value, with: { (data) in
-                            let boolean : String = (data.value as? String)!
-                            if boolean == "true" {
-                                print("Advance")
-                                // Get Temperature Model
-                                let tempModel = TemperatureStructure()
-                                Database.database().reference().child("Users").child(user.uid!).child("lastTemperature").child("dayTaken").observe(.value, with: { (dayTakenResult) in
-                                    let dayTaken : String = (dayTakenResult.value as? String)!
-                                    print(dayTaken)
-                                    Database.database().reference().child("Users").child(user.uid!).child("lastTemperature").child("locationTaken").observe(.value, with: { (locationTakenResult) in
-                                        let locationTaken : String = (locationTakenResult.value as? String)!
-                                        print(locationTaken)
-                                        Database.database().reference().child("Users").child(user.uid!).child("lastTemperature").child("tempTaken").observe(.value, with: { (tempTakenResult) in
-                                            let tempTaken : String = (tempTakenResult.value as? String)!
-                                            print(tempTaken)
-                                            Database.database().reference().child("Users").child(user.uid!).child("lastTemperature").child("timeTaken").observe(.value, with: { (timeTakenResult) in
-                                                let timeTaken : String = (timeTakenResult.value as? String)!
-                                                Database.database().reference().child("Users").child(user.uid!).child("name").observe(.value, with: { (userTakenResult) in
-                                                    let userTaken : String = (userTakenResult.value as? String)!
-                                                    print(userTaken)
-                                                    tempModel.dayy = dayTaken
-                                                    tempModel.locat = locationTaken
-                                                    tempModel.temp = tempTaken
-                                                    tempModel.time = timeTaken
-                                                    tempModel.user = userTaken
-                                                    self.friendTemps.append(tempModel)
-                                                    self.tableView.reloadData()
-                                                })
-                                            })
-                                        })
-                                    })
-                                })
-                            } else {
-                                print("Null")
-                            }
-                        })
-
-                        print(user.uid!)
-
-                    }
-                }
-                
-            } else {
-                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
-                    self.tableView.alpha = 0
-                }, completion: nil)
-            }
-        })
-        
-        self.hideIndicator()
     }
 
 }
