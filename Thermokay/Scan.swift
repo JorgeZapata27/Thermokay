@@ -87,8 +87,9 @@ class Scan: UIViewController, AVCapturePhotoCaptureDelegate{
             captureSession = AVCaptureSession()
             captureSession?.addInput(input)
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-            let frame : CGRect = self.scanView.layer.bounds
-            videoPreviewLayer?.frame = frame
+//            let frame : CGRect = self.scanView.layer.bounds
+//            videoPreviewLayer?.frame = frame
+            videoPreviewLayer?.bounds = self.scanView.bounds
 //            videoPreviewLayer.videoOrientation = .right
             scanView.layer.addSublayer(videoPreviewLayer!)
             captureSession?.startRunning()
