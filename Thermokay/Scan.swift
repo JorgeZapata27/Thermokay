@@ -21,8 +21,12 @@ class Scan: UIViewController, AVCapturePhotoCaptureDelegate{
     
     @IBOutlet var imageToShow : UIImageView!
     @IBOutlet var gifIV : UIImageView!
+    
+//    let captureSession = AVCaptureSession()
+    var previewLayer : CALayer!
+    var vaptureDevice : AVCaptureDevice!
 
-    //Camera Capture requiered properties
+//    Camera Capture requiered properties
     var captureSession : AVCaptureSession?
     var videoPreviewLayer : AVCaptureVideoPreviewLayer?
     var frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
@@ -87,20 +91,18 @@ class Scan: UIViewController, AVCapturePhotoCaptureDelegate{
             captureSession = AVCaptureSession()
             captureSession?.addInput(input)
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-//            let frame : CGRect = self.scanView.layer.bounds
-//            videoPreviewLayer?.frame = frame
-            videoPreviewLayer?.bounds = self.scanView.bounds
-//            videoPreviewLayer.videoOrientation = .right
+            videoPreviewLayer?.videoGravity = .resizeAspect
+            videoPreviewLayer?.frame = scanView.bounds
+            videoPreviewLayer?.bounds = scanView.frame
             scanView.layer.addSublayer(videoPreviewLayer!)
             captureSession?.startRunning()
         } catch {
             print("error-jz")
         }
-        
+
         capturePhotoOutput = AVCapturePhotoOutput()
         capturePhotoOutput?.isHighResolutionCaptureEnabled = true
         captureSession?.addOutput(capturePhotoOutput!)
-
         self.gifIV.loadGif(name: "rotate")
 
         // Do any additional setup after loading the view.
@@ -151,7 +153,7 @@ class Scan: UIViewController, AVCapturePhotoCaptureDelegate{
             self.scanView.isHidden = true
             self.imageToShow.isHidden = false
             self.imageToShow.image = image
-            
+
             guard
                 let landscapeImage = imageToShow.image,
                 let landscapeCGImage = landscapeImage.cgImage
@@ -159,16 +161,16 @@ class Scan: UIViewController, AVCapturePhotoCaptureDelegate{
             let portraitImage = UIImage(cgImage: landscapeCGImage, scale: landscapeImage.scale, orientation: .right)
             imageToShow.image = portraitImage
             print("Start")
-            
+
             var processImage : UIImage?
-            
+
             if let newimage = image.cgImage {
                 processImage = UIImage(cgImage: newimage, scale: UIScreen.main.scale, orientation: .right)
                 processor.process(in: processImage!) { (text) in
                                 print(text)
                 let actual = text.prefix(3)
                     self.degres = String(actual)
-                                
+
                                 var nextString = text.westernArabicNumeralsOnly
                 //
                 //                let testAlert = UIAlertController(title: "Testing", message: text, preferredStyle: .alert)
@@ -176,12 +178,12 @@ class Scan: UIViewController, AVCapturePhotoCaptureDelegate{
                 //                self.present(testAlert, animated: true, completion: nil)
 
                     if nextString.count > 2 {
-                        
+
                         var newString = nextString
                         var anotherString = nextString
-                        
+
                         anotherString.insert(".", at: nextString.index(nextString.startIndex, offsetBy: 2))
-                        
+
                         newString.insert(".", at: nextString.index(nextString.startIndex, offsetBy: 2))
                         newString.insert("°", at: nextString.index(nextString.endIndex, offsetBy: 0))
                         newString.insert("F", at: nextString.index(nextString.endIndex, offsetBy: 0))
