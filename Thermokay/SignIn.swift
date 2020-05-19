@@ -98,6 +98,7 @@ class SignIn: UIViewController {
                 controller.modalPresentationStyle = .fullScreen
                 self.present(controller, animated: true, completion: nil)
                 print("All Good. Logging in. ")
+                UserDefaults.standard.bool(forKey: "authBugBool")
             } else {
                 self.hideIndicator()
                 if let myError = error?.localizedDescription {
