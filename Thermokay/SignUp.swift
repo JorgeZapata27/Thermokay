@@ -130,6 +130,7 @@ class SignUp: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                                 Database.database().reference().child("Users").child((Auth.auth().currentUser!.uid)).updateChildValues(dict) { (error4, ref) in
                                     if error4 == nil {
                                         print("Hello")
+                                        UserDefaults.standard.bool(forKey: "authBugBool")
                                         self.QRFunction()
                                     } else {
                                         print(error4!.localizedDescription)
