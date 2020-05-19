@@ -51,6 +51,10 @@ class Users: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if self.isMovingFromParentViewController {
+            GlobalVariables.selectedOnes = selectedUsers
+        }
+        
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
@@ -91,7 +95,6 @@ class Users: UIViewController, UITableViewDelegate, UITableViewDataSource, UISea
             } else {
                 
                 self.selectedUsers.append(searchedUsers[indexPath.row])
-                GlobalVariables.selectedOnes = selectedUsers
                 
                 tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
             }
