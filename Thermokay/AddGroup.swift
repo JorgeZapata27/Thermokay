@@ -72,6 +72,10 @@ class AddGroup: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if self.isMovingFromParentViewController {
+            GlobalVariables.selectedOnes = selectedUsers
+        }
+        
         self.groupMembers = GlobalVariables.selectedOnes
         
         for user in groupMembers {
