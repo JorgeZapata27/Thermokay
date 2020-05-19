@@ -73,7 +73,7 @@ class AddGroup: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(animated)
         
         if self.isMovingFromParentViewController {
-            GlobalVariables.selectedOnes = selectedUsers
+            GlobalVariables.selectedOnes.removeAll
         }
         
         self.groupMembers = GlobalVariables.selectedOnes
