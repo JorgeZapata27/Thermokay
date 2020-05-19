@@ -22,6 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Testing Only
         
+        let authBugBool = UserDefaults.standard.bool(forKey: "AuthBugBool)
+        
+        if authBugBool != true {
+            do {
+                try Auth.auth().signOut()
+            } catch let error as NSError {
+                print(error.localizedDescription!)
+            }
+        } else {
+            print("Already Signed In")
+        }
+        
 //         Auth.auth().signIn(withEmail: "peterzucker123@gmail.com", password: "lemon123") { (result, error) in
 //             if error != nil {
 //                 print(error!.localizedDescription)
