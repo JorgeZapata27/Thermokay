@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Testing Only
         
-        let authBugBool = UserDefaults.standard.bool(forKey: "AuthBugBool)
+        let authBugBool = UserDefaults.standard.bool(forKey: "authBugBool")
         
         if authBugBool != true {
             do {
